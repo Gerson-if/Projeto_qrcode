@@ -14,13 +14,8 @@ $image_url = $row['image_url'];
 $sql_delete_qrcode = "DELETE FROM qrcodes WHERE id=$id";
 if ($conn->query($sql_delete_qrcode) === TRUE) {
     // Exclusão da imagem associada
-    // Obtém o caminho absoluto da imagem e exclui
-    $file_path = parse_url($image_url, PHP_URL_QUERY);
-    if (unlink($file_path)) {
-        echo "QR code e imagem excluídos com sucesso";
-    } else {
-        echo "Erro ao excluir imagem associada";
-    }
+    // Não é necessário excluir a imagem, pois ela é gerada dinamicamente pela API do Google
+    echo "QR code excluído com sucesso";
 } else {
     echo "Erro ao excluir QR code: " . $conn->error;
 }

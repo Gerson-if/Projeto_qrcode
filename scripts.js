@@ -1,8 +1,9 @@
 $(document).ready(function(){
     // Requisição AJAX para inserir QR code
     $("#submitBtn").click(function(){
+        var title = $("#title").val();
         var data = $("#data").val();
-        $.post("insert_qrcode.php", {data: data}, function(response){
+        $.post("insert_qrcode.php", {title: title, data: data}, function(response){
             alert(response);
             loadQRCodes(); // Recarrega os QR codes após a inserção
         });
