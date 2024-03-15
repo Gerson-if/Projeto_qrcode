@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS qrcode_db;
+
+USE qrcode_db;
+
+CREATE TABLE IF NOT EXISTS qrcodes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data TEXT NOT NULL,
+    image_url TEXT NOT NULL
+);
